@@ -127,3 +127,18 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+*test*
+archieve/
+thread.py
+*tmp*
+getI*
+img/
+*cache*
+# Elastic Beanstalk Files
+.elasticbeanstalk/
+# !.elasticbeanstalk/*.cfg.yml
+# !.elasticbeanstalk/*.global.yml
+
+token*
+kettyan-bot/

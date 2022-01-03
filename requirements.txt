@@ -1,0 +1,13 @@
+beautifulsoup4==4.10.0
+certifi==2021.10.8
+cloudscraper==1.2.58
+colorama==0.4.4
+demjson3==3.0.5
+mechanize==0.4.7
+Pillow==8.4.0
+pyexiv2==2.7.1
+python_telegram_bot==13.9
+requests==2.26.0
+setuptools==57.4.0
+SocksiPy_branch==1.01
+telegram==0.0.1
