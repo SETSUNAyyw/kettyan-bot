@@ -1,32 +1,46 @@
 <!DOCTYPE html>
 <!-- saved from url=(0022)http://localhost:9000/ -->
-<html lang="en"><link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style lang="en" type="text/css" id="dark-mode-custom-style"></style><style lang="en" type="text/css" id="dark-mode-native-style"></style><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+  <link type="text/css" rel="stylesheet" id="dark-mode-custom-link">
+  <link type="text/css" rel="stylesheet" id="dark-mode-general-link">
+  <style lang="en" type="text/css" id="dark-mode-custom-style"></style>
+  <style lang="en" type="text/css" id="dark-mode-native-style"></style>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+
         
         <title>けっちゃんの使い方</title>
         <link rel="stylesheet" media="screen" href="./index_files/main.css">
         <link rel="shortcut icon" type="image/png" href="./index_files/assets/images/favicon.png">
-        <script src="./index_files/hello.js.ダウンロード" type="text/javascript"></script>
-    </head>
-    <body>
-        
-        
-
-    
-     
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="./index_files/assets/jquery/lang.js"></script>
 
 
+</head>
+
+<body onload="javascript:onload_lang();">
 
 <section id="top">
   <div class="wrapper">
-    <!-- <h1><a href="https://playframework.com/documentation/2.8.11/Home">Kettyan Bot User Guide</a></h1> -->
-    <h1><a>Kettyan Bot User Guide</a></h1>
+    <h1>
+      <span lang="en">Kettyan Bot User Guide</span>
+      <span lang="ja">けっちゃんの使い方ご案内</span>
+      <span lang="zh">K酱的使用方法</span>
+    </h1>
+    <h2><a href="#" onclick="javascript:switch_lang('en');" style="position: fixed;right: 65px;top: 40px; width: 30px;">E</a></h2>
+    <h2><a href="#" onclick="javascript:switch_lang('ja');" style="position: fixed;right: 35px;top: 40px; width: 30px;">あ</a></h2>
+    <h2><a href="#" onclick="javascript:switch_lang('zh');" style="position: fixed;right: 0;top: 40px; width: 30px;">中</a></h2>
   </div>
 </section>
 
 <div id="content" class="wrapper doc">
 <article>
-
-  <h1 id="commands">Commands</h1>
+  <h1 id="commands">
+    <span lang="en">Commands</span>
+    <span lang="ja">コマンドリスト</span>
+    <span lang="zh">指令集</span>
+  </h1>
   <ul>
     <li><p>
       <code>/start</code> - Greet with kettyan and start using. 
@@ -95,7 +109,7 @@
       When a digit number is sent to kettyan, kettyan will regard it as a pixiv id and try to return the images of this illust id. Kettyan will tell the user if the pixiv id is invalid (no such id).
     </p>
     <p>
-      URLs with <code>https://www.pixiv.net/artworks/xxxxxxxx</code> format can also be sent to kettyan, which will be recognized as a pixiv id. Forwarded messages are also supported as long as the url is contained in the text and no images are sent together with the text (images are handled in <a href="#imgsearch"></a>).
+      URLs with <code>https://www.pixiv.net/artworks/xxxxxxxx</code> format can also be sent to kettyan, which will be recognized as a pixiv id. Forwarded messages are also supported as long as the url is contained in the text and no images are sent together with the text (images are handled in <a href="#imgsearch">here</a>).
     </p>
     <h3>Examples</h3>
       <p><strong>Acceptable</strong></p>
@@ -254,7 +268,12 @@ GET     /               controllers.HomeController.index</code></pre>
 
 
 
-    
+<!-- <script src="./index_files/assets/jquery/lang.js"></script> -->
+<script>
+  $('[lang="ja"]').hide();
+  $('[lang="zh"]').hide();
+  
+</script>
 
 
 <div id="highlighter--hover-tools" style="display: none;">
