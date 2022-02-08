@@ -14,7 +14,6 @@
         <link rel="stylesheet" media="screen" href="./index_files/main.css">
         <link rel="shortcut icon" type="image/png" href="./index_files/assets/images/favicon.png">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="./index_files/assets/jQuery/lang.js"></script>
 
 
 </head>
@@ -23,19 +22,33 @@
 
 <section id="top">
   <div class="wrapper">
-    <h1>
+    <h1 id="title">
       <span lang="en">Kettyan Bot User Guide</span>
       <span lang="ja">けっちゃんの使い方ご案内</span>
       <span lang="zh">K酱的使用方法</span>
     </h1>
-    <h2><a href="#" onclick="javascript:switch_lang('en');" style="position: fixed;right: 65px;top: 40px; width: 30px;">E</a></h2>
-    <h2><a href="#" onclick="javascript:switch_lang('ja');" style="position: fixed;right: 35px;top: 40px; width: 30px;">あ</a></h2>
-    <h2><a href="#" onclick="javascript:switch_lang('zh');" style="position: fixed;right: 0;top: 40px; width: 30px;">中</a></h2>
+    <script src="./index_files/assets/jQuery/lang.js"></script>
+    <h2><a href="#" onclick="javascript:switch_lang('en'); return false;" style="position: fixed;right: 65px;top: 40px; width: 30px;">E</a></h2>
+    <h2><a href="#" onclick="javascript:switch_lang('ja'); return false;" style="position: fixed;right: 35px;top: 40px; width: 30px;">あ</a></h2>
+    <h2><a href="#" onclick="javascript:switch_lang('zh'); return false;" style="position: fixed;right: 0;top: 40px; width: 30px;">中</a></h2>
   </div>
 </section>
 
+<a href="https://www.pixiv.net/artworks/87945995">
+  <img src="./index_files/assets/images/RuGu.webp" id="RuGu">
+</a>
+<a href="#">
+  <img src="./index_files/assets/images/page-top.webp" id="totop">
+</a>
+
+<script src="./index_files/assets/jQuery/top.js" type="text/javascript"></script>
+<!-- <script type="text/javascript">fadeTopButton();</script> -->
+<!-- <script type="text/javascript">
+  
+</script> -->
+
 <div id="content" class="wrapper doc">
-<article>
+<article id="usage">
   <h1 id="commands">
     <span lang="en">Commands</span>
     <span lang="ja">コマンドリスト</span>
@@ -83,7 +96,7 @@
         <br><strong>e.g.</strong> <code>/r18 5</code> will request 5 R-18 illust ids, each returning one image only.</li>
     </ol>
     <br>
-    <strong>P.S.</strong> The above features are not recommended to use, since clicking the command button for multiple times will definitely be faster than calling the parameters.
+    <p><strong>P.S.</strong> The above features are not recommended to use, since clicking the command button for multiple times will definitely be faster than calling the parameters.</p>
   </blockquote>
 
   <h1>Direct Message</h1>
@@ -126,141 +139,117 @@
       </ul>
 
   <h2 id="tagsearch">Search pixiv illust by tags or keywords</h2>
+    <p>
+      If the message contains words, kettyan will recognize them as tags. Tags are separated by space (not comma or semicolon). Keyword search is also available, and only one keyword is supported, i.e., if multiple keywords separated by space are sent, then only the first one will be taken.
+    </p>
+    <p>
+      Since tags/keyword search all work in text mode, when a text message is sent to kettyan, tags search will occur first, and then keyword search is triggered if tags search returns nothing.
+    </p>
+    <p>
+      Keyword search is not very accurate, so simple keywords such as "gawr" are recommended. Tags search is more powerful and recommended, though it is not guaranteed to find the required illust especially with too many tags.
+    </p>
+    <h3>
+      Examples
+    </h3>
+    <p><strong>Acceptable</strong></p>
+      <ul>
+        <li>loli</li>
+        <li>hololive r18</li>
+        <li>hello</li>
+      </ul>
+      <p><strong>Invalid</strong></p>
+      <ul>
+        <li>love,ntr,loli</li>
+        <li>Find pictures of rushia!</li>
+      </ul>
+
   <h2 id="imgsearch">Find similar illust</h2>
-  <h2 id="sticker">Convert telegram stickers to images</h2>
-<!-- 
-    <pre><code># Home page
-GET     /               controllers.HomeController.index</code></pre>
-
-    <p>
-      Play has invoked the <code>controllers.HomeController.index</code> method to obtain the <code>Action</code> to execute:
-    </p>
-
-    <pre><code>def index = Action {
-  Ok(views.html.index("Your new application is ready."))
-}</code></pre>
-
-    <p>
-      An action is a function that handles the incoming HTTP request, and returns the HTTP result to send back to the web client.
-      Here we send a <code>200 OK</code> response, using a template to fill its content.
-    </p>
-
-    <p>
-      The template is defined in the <code>app/views/index.scala.html</code> file and compiled as a Scala function.
-    </p>
-
-    <pre><code>@(message: String)(implicit assetsFinder: AssetsFinder)
-
-@main("Welcome to Play") {
-
-    @welcome(message, style = "scala")
-
-}</code></pre>
-
-    <p>
-      The first line of the template defines the function signature. Here it just takes a single <code>String</code> parameter.
-      This template then calls another function defined in <code>app/views/main.scala.html</code>, which displays the HTML
-      layout, and another function that displays this welcome message. You can freely add any HTML fragment mixed with Scala
-      code in this file.
-    </p>
-
-    <p>You can read more about <a href="https://www.playframework.com/documentation/2.8.11/ScalaTemplates">Twirl</a>, the template language used by Play, and how Play handles <a href="https://www.playframework.com/documentation/2.8.11/ScalaActions">actions</a>.</p>
-
-    <h2>Async Controller</h2>
-
-    Now that you've seen how Play renders a page, take a look at <code>AsyncController.scala</code>, which shows how to do asynchronous programming when handling a request.  The code is almost exactly the same as <code>HomeController.scala</code>, but instead of returning <code>Result</code>, the action returns <code>Future[String]</code> to Play.  When the execution completes, Play can use a thread to render the result without blocking the thread in the mean time.
-
-    <p>
-        <a href="/message">Click here for the AsyncController action!</a>
-    </p>
-
-    <p>
-        You can read more about <a href="https://www.playframework.com/documentation/2.8.11/ScalaAsync">asynchronous actions</a> in the documentation.
-    </p>
-
-    <h2>Count Controller</h2>
-
-    <p>
-        Both the HomeController and AsyncController are very simple, and typically controllers present the results of the interaction of several services.  As an example, see the <code>CountController</code>, which shows how to inject a component into a controller and use the component when handling requests.  The count controller increments every time you refresh the page, so keep refreshing to see the numbers go up.
-    </p>
-
-    <p>
-        <a href="/count">Click here for the CountController action!</a>
-    </p>
-
-    <p>
-        You can read more about <a href="https://www.playframework.com/documentation/2.8.11/ScalaDependencyInjection">dependency injection</a> in the documentation.
-    </p>
-
-    <h2>Need more info on the console?</h2>
-
   <p>
-    For more information on the various commands you can run on Play, i.e. running tests and packaging applications for production, see <a href="https://playframework.com/documentation/2.8.11/PlayConsole">Using the Play console</a>.
-  </p>  
-
-  <h2>Need to set up an IDE?</h2>
-
+    When photo message is sent, kettyan will search it on <a href="https://saucenao.com/">Saucenao</a>. If the message contains multiple images, kettyan will serach for each of them independently. A link with similarities will be returned and the preview of the link will be provided by Telegram if possible.
+  </p>
+  <img src="./index_files/assets/images/demo_1.webp">
   <p>
-      You can start hacking your application right now using any text editor. Any changes will be automatically reloaded at each page refresh, 
-      including modifications made to Scala source files.
+    Three interactive buttons will be attached to the returned link.
+  </p>
+  <p>
+    If you think the search result is satisfying, you may press the <code>⭕</code> button or just leave it without doing anything; If the result is unexpected, you may try to press <code>❌</code> to see next result with lower similarity. When no other results can be shown, a <a href="https://yandex.ru/images/">Yandex</a> search link will be provided. If too many people are searching, then the yandex link will be unavailable due to bot detection.
+  </p>
+  <p>
+    If you are searching for an incomplete photo's original version, saucenao seems to be poor at such work. If kettyan returns a similar illust but not a pixiv one, you may try to press <code>この画像で検索する</code> to further search for this image.
   </p>
 
+  <h2 id="sticker">Convert Telegram stickers to images</h2>
   <p>
-      If you want to set-up your application in <strong>IntelliJ IDEA</strong> or any other Java IDE, check the 
-      <a href="https://www.playframework.com/documentation/2.8.11/IDE">Setting up your preferred IDE</a> page.
+    Send telegram sticker to kettyan and the <code>png</code> original file together with the compressed <code>jpg</code> picture will be returned.
+  </p>
+  <p>
+    Only support static stickers, i.e., animated stickers cannot be converted using kettyan.
   </p>
 
-  <h2>Need more documentation?</h2>
-
-  <p>
-    Play documentation is available at <a href="https://www.playframework.com/documentation/2.8.11">https://www.playframework.com/documentation</a>.
-  </p>
-
-  <p>
-    Play comes with lots of example templates showcasing various bits of Play functionality at <a href="https://www.playframework.com/download#examples">https://www.playframework.com/download#examples</a>.
-  </p>
-
-  <h2>Need more help?</h2>
-
-  <p>
-    Play questions are asked and answered on Stackoverflow using the "playframework" tag: <a href="https://stackoverflow.com/questions/tagged/playframework">https://stackoverflow.com/questions/tagged/playframework</a>
-  </p>
-
-  <p>
-    The <a href="https://discuss.playframework.com">Discuss Play Forum</a> is where Play users come to seek help,
-    announce projects, and discuss issues and new features.
-  </p>
-
-  <p>
-    Gitter is a real time chat channel, like IRC. The <a href="https://gitter.im/playframework/playframework">playframework/playframework</a>  channel is used by Play users to discuss the ins and outs of writing great Play applications.
-  </p>
-  -->
+  <h1>
+    Inline Call
+  </h1>
+  <blockquote>
+    <p>
+      kettyan does not support inline call
+    </p>
+  </blockquote>
+  <h1>
+    Group Message
+  </h1>
+  <blockquote>
+    <p>
+      kettyan does not support group message
+    </p>
+  </blockquote>
+</article>
+<hr>
+<article id="service">
+  <h1>
+    Service Support
+  </h1>
+  <h2>
+    API
+  </h2>
+  <ul>
+    <li><a href="https://github.com/python-telegram-bot/python-telegram-bot">Python Telegram bot</a></li>
+    <li><a href="https://api.lolicon.app/#/setu">lolicon</a></li>
+    <li><a href="https://pixiv.cat/">pixiv.cat</a></li>
+    <li><a href="https://saucenao.com">Saucenao</a></li>
+    <li><a href="https://yandex.ru/images/">Yandex image</a></li>
+  </ul>
+  <h2>
+    Github
+  </h2>
+  <a href="https://github.com/remisiki/kettyan-bot">https://github.com/remisiki/kettyan-bot</a>
+  <h2>
+    Telegram
+  </h2>
+  <a href="https://t.me/kettyan_bot">@kettyan_bot</a>
 </article>
 
-<aside class="sidebar">
+<aside class="sidebar" id="sidebar">
+  <script src="./index_files/assets/jQuery/side.js"></script>
+  <a href="#" onclick="javascript:foldSideBar(); return false;">
+    <div id="fold"><img src="./index_files/assets/images/fold.png" id="foldpng"></div></a>
+  <div id="sidecontent">
   <h3>Contents</h3>
   <ul>
-    <!-- <li><a href="https://playframework.com/documentation/2.8.11">Documentation</a></li> -->
     <a href="#commands">Command List</a>
     <a href="#pid">Get by Pixiv ID</a>
     <a href="#tagsearch">Search by Tags</a>
     <a href="#imgsearch">Search by Image</a>
     <a href="#sticker">Convert Stickers</a>
-    <!-- <li><a href="https://playframework.com/documentation/2.8.11/api/scala/index.html">Browse the Scala API</a></li> -->
   </ul>
-  <!-- <h3>Start here</h3>
+  <h3>
+    Links
+  </h3>
   <ul>
-    <li><a href="https://playframework.com/documentation/2.8.11/PlayConsole">Using the Play console</a></li>
-    <li><a href="https://playframework.com/documentation/2.8.11/IDE">Setting up your preferred IDE</a></li>
-    <li><a href="https://playframework.com/download#examples">Example Projects</a>
+    <a href="#service">API</a>
+    <a href="https://github.com/remisiki/kettyan-bot">Github</a>
+    <a href="https://t.me/kettyan_bot">Telegram</a>
   </ul>
-  <h3>Help here</h3>
-  <ul>
-    <li><a href="https://stackoverflow.com/questions/tagged/playframework">Stack Overflow</a></li>
-    <li><a href="https://discuss.playframework.com">Discuss Play Forum</a> </li>
-    <li><a href="https://gitter.im/playframework/playframework">Gitter Channel</a></li>
-  </ul> -->
-  
+  </div>
 </aside>
 
 </div>
@@ -268,7 +257,6 @@ GET     /               controllers.HomeController.index</code></pre>
 
 
 
-<!-- <script src="./index_files/assets/jquery/lang.js"></script> -->
 <script>
   $('[lang="ja"]').hide();
   $('[lang="zh"]').hide();
