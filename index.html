@@ -19,7 +19,11 @@
 </head>
 
 <body onload="javascript:onload_lang();">
-
+<script type="text/javascript">
+  // Set a same-site cookie for first-party contexts
+  document.cookie = 'SameSite=Lax;';
+</script>
+<div id="container">
 <section id="top">
   <div class="wrapper">
     <h1 id="title">
@@ -35,17 +39,14 @@
 </section>
 
 <a href="https://www.pixiv.net/artworks/87945995">
-  <img src="https://drive.google.com/uc?export=view&id=1K6B2PSR-rEfj5qrbVapym9qKPg8UK6pn" id="RuGu">
+  <!-- <img src="https://drive.google.com/uc?export=view&id=1K6B2PSR-rEfj5qrbVapym9qKPg8UK6pn" id="RuGu"> -->
+  <img src="./index_files/assets/images/RuGu.webp" id="RuGu">
 </a>
 <a href="#">
   <img src="./index_files/assets/images/page-top.webp" id="totop">
 </a>
 
-<script src="./index_files/assets/javascript/top.js" type="text/javascript"></script>
-<!-- <script type="text/javascript">fadeTopButton();</script> -->
-<!-- <script type="text/javascript">
-  
-</script> -->
+<script src="./index_files/assets/javascript/scroll.js" type="text/javascript"></script>
 
 <div id="content" class="wrapper doc">
 <article id="usage">
@@ -226,6 +227,7 @@
     Telegram
   </h2>
   <a href="https://t.me/kettyan_bot">@kettyan_bot</a>
+
 </article>
 
 <aside class="sidebar" id="sidebar">
@@ -234,24 +236,25 @@
     <div id="fold"><img src="./index_files/assets/images/fold.png" id="foldpng"></div></a>
   <div id="sidecontent">
   <h3>Contents</h3>
-  <ul>
-    <a href="#commands">Command List</a>
-    <a href="#pid">Get by Pixiv ID</a>
-    <a href="#tagsearch">Search by Tags</a>
-    <a href="#imgsearch">Search by Image</a>
-    <a href="#sticker">Convert Stickers</a>
+  <ul id="side1">
+    <a href="#commands" id="commandssection">Command List</a>
+    <a href="#pid" id="pidsection">Get by Pixiv ID</a>
+    <a href="#tagsearch" id="tagsearchsection">Search by Tags</a>
+    <a href="#imgsearch" id="imgsearchsection">Search by Image</a>
+    <a href="#sticker" id="stickersection">Convert Stickers</a>
   </ul>
   <h3>
     Links
   </h3>
   <ul>
-    <a href="#service">API</a>
+    <a href="#service" id="servicesection">API</a>
     <a href="https://github.com/remisiki/kettyan-bot">Github</a>
     <a href="https://t.me/kettyan_bot">Telegram</a>
   </ul>
   </div>
 </aside>
 
+</div>
 </div>
 
 
