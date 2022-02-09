@@ -20,7 +20,7 @@ function foldSideBar() {
 	    	"border-radius": "30px 15px",
 	    });
 	    $('#foldpng').css({
-	    	"transform": "",
+	    	"transform": "rotateX(0deg)",
 	    	"top": "5%",
 	    	"right": "5%",
 	    })
