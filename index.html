@@ -192,12 +192,12 @@
     <p>
       <span lang="en">When a <span class="yellow-marker-thin">number</span> is sent to kettyan, kettyan will regard it as a pixiv id and try to return the images of this illust id. Kettyan will tell the user if the pixiv id is invalid (no such id).</span>
       <span lang="ja"><span class="yellow-marker-thin">数字のみ</span>が送られた場合は、Pixiv IDとして認識されます。もちろん、すべての数字が有効なPixiv IDというわけではありません。<code>https://www.pixiv.net/artworks/xxxxxxxx</code>が存在している場合だけです。</span>
-      <span lang="zh">向K醬傳送<span class="yellow-marker-thin">數字信息</span>，會被識別為Pixiv ID。但并不是所有數字都是合法的Pixiv ID，只有真實存在的插畫才會被下載并返回。</span>
+      <span lang="zh">向K醬DM<span class="yellow-marker-thin">數字信息</span>，會被識別為Pixiv ID。但并不是所有數字都是合法的Pixiv ID，只有真實存在的插畫才會被下載并返回。</span>
     </p>
     <p>
       <span lang="en">URLs with <code>https://www.pixiv.net/artworks/xxxxxxxx</code> format can also be sent to kettyan, which will be recognized as a pixiv id. Forwarded messages are also supported as long as the url is contained in the text and no images are sent together with the text (images are handled in <a href="#imgsearch">here</a>).</span>
       <span lang="ja">代わりに、<code>https://www.pixiv.net/artworks/xxxxxxxx</code>のURLをそのままけっちゃんに転送すると検出することもできます。画像がテキストと一緒に送られない限り、転送メッセージにはURL以外の内容があったとしても構いません。</span>
-      <span lang="zh">此外，可以直接發送帶有<code>https://www.pixiv.net/artworks/xxxxxxxx</code>格式的URL，同樣能被識別。訊息中含有除圖像之外的文本都沒有問題（若傳送了圖像，就會觸發<a href="#imgsearch">反向圖像搜索</a>）。</span>
+      <span lang="zh">此外，可以直接發送帶有<code>https://www.pixiv.net/artworks/xxxxxxxx</code>格式的URL，同樣能被識別。訊息中含有除圖像之外的文本都沒有問題（若DM了圖像，就會觸發<a href="#imgsearch">反向圖像搜索</a>）。</span>
     </p>
     <h3>
       <span lang="en">Examples</span>
@@ -298,7 +298,7 @@
   <p>
     <span lang="en">When photo message is sent, kettyan will search it on <a href="https://saucenao.com/">Saucenao</a>. If the message contains multiple images, kettyan will serach for each of them independently. A link with similarities will be returned and the preview of the link will be provided by Telegram if possible.</span>
     <span lang="ja">画像を直接に送ると、けっちゃんは<a href="https://saucenao.com/">Saucenao</a>でこの画像に似ているイラストを探していきます。複数の画像をまとめて送ってもOKです。返信メッセージは下記のように、類似度やリンクが返され、可能であればプレビューがTelegramによって提供されます。</span>
-    <span lang="zh">直接向K醬發送圖像，就可以觸發<a href="https://saucenao.com/">Saucenao</a>提供的反向圖像搜尋。發送一個包含多張圖像的媒體組也是OK的。如下圖所示，回覆會包含原始連結以及類似度，Telegram客戶端也會提供網址的圖像預覽。</span>
+    <span lang="zh">向K醬DM圖像，就可以觸發<a href="https://saucenao.com/">Saucenao</a>提供的反向圖像搜尋。發送一個包含多張圖像的媒體組也是OK的。如下圖所示，回覆會包含原始連結以及類似度，Telegram客戶端也會提供網址的圖像預覽。</span>
   </p>
   <img src="./index_files/assets/images/demo_1.webp">
   <p>
