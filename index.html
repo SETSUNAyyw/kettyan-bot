@@ -29,7 +29,7 @@
     <h1 id="title">
       <span lang="en">Kettyan Bot User Guide</span>
       <span lang="ja">けっちゃんの使い方ご案内</span>
-      <span lang="zh">K酱的使用方法</span>
+      <span lang="zh">K醬的使用手冊</span>
     </h1>
     <script src="./index_files/assets/javascript/lang.js"></script>
     <h2><a href="#" onclick="javascript:switch_lang('en'); return false;" style="position: fixed;right: 65px;top: 40px; width: 30px;">E</a></h2>
@@ -57,157 +57,318 @@
   </h1>
   <ul>
     <li><p>
-      <code>/start</code> - Greet with kettyan and start using. 
+      <code>/start</code> - <span lang="en">Greet with kettyan and start using.</span>
+      <span lang="ja">けっちゃんと挨拶をします。</span>
+      <span lang="zh">打個招呼</span> 
     </p></li>
 
     <li><p>
-      <code>/help</code> - See help message. 
+      <code>/help</code> - <span lang="en">See help message. </span>
+      <span lang="ja">使い方を見ます。</span>
+      <span lang="zh">查看使用方法</span>
       
     </p></li>
 
     <li><p>
-      <code>/r0</code> - Randomly pick one illust id from <a href="https://pixiv.net/">Pixiv</a>. Theoretically, the illust will be safe for work, but in case that the illust is R-18, a <a>#NSFW</a> (not safe for work) tag may be added in the caption. 
+      <code>/r0</code> - <span lang="en">Randomly pick one illust id from <a href="https://pixiv.net/">Pixiv</a>. Theoretically, the illust will be safe for work, but <span class="yellow-marker-thin">in case that the illust is R-18, a <a>#NSFW</a> (not safe for work) tag may be added in the caption</span>.</span>
+      <span lang="ja"><a href="https://pixiv.net/">Pixiv</a> のイラストがランダムに表示されます。<span class="yellow-marker-thin">もし18禁画像が出てきたら、<a>#NSFW</a>（職場では見ない方が良い）のタグが付けられますのでご注意を。</span></span>
+      <span lang="zh">從<a href="https://pixiv.net/">Pixiv</a>隨機獲取一張插畫。<span class="yellow-marker-thin">有一定機率會出現18禁（并會被標記為<a>#NSFW</a>）的圖像。</span></span>
     </p>
     <p>
-      The illust id may contain multiple images, and all of them (no more than 10) will be sent to the user. If the total number of images is larger than 10, only the first 10 of them will be sent. The returned images are in compressed <code>jpg</code> format, and original files can be accessed from the pixiv link attached with the images.
+      <span lang="en">The illust id may contain multiple images, and all of them (no more than 10) will be sent to the user. If the total number of images is larger than 10, only the first 10 of them will be sent. The returned images are in compressed <code>jpg</code> format, and original files can be accessed from the pixiv link attached with the images.</span>
+      <span lang="ja">Pixivのイラストには複数の画像が含まれている場合、10枚以下の画像しか送られません。画像は<code>jpg</code>形式で圧縮されて送られます。付けたリンクを開くとPixivへ飛んで、元ファイルをダウンロードできます。</span>
+      <span lang="zh">Pixiv的一個插畫ID可能會包含多張圖像，而K醬一次最多能上傳10張。圖像會以<code>jpg</code>壓縮格式傳回，單擊附帶的連結也可直接從Pixiv下載原始圖像。</span>
     </p>
     <p>
-      Time to fetch the images depends on server conditions and varies from 1s to 20s. If no images are returned after 30s, the command will be dumped due to timeout.
+      <span lang="en">Time to fetch the images depends on server conditions and varies from 1s to 20s. If no images are returned after 30s, the command will be dumped due to timeout.</span>
+      <span lang="ja">サーバーや回線の状態によって時間がかかりますので返信が来るまで少々お待ちを。通常は20秒以内に必ず届けますが、30秒以上かかったらリクエストが無効になり、タイムアウトになります。タイムアウトが発生した場合は、新しいコマンドをリクエストしてください。</span>
+      <span lang="zh">根據伺服器以及網路連接狀態，K醬會在1至20秒之内進行回覆。如果超過30秒未收到回覆，説明連結已經超時，需要重新發送指令。</span>
     </p></li>
 
     <li><p>
-      <code>/r18</code> - Randomly pick one R-18 illust id from <a href="https://pixiv.net/">Pixiv</a>. A <a>#NSFW</a> (not safe for work) tag will be added in the caption.
+      <code>/r18</code> - <span lang="en">Randomly pick one R-18 illust id from <a href="https://pixiv.net/">Pixiv</a>.<span class="yellow-marker-thin"> A <a>#NSFW</a> (not safe for work) tag will be added in the caption.</span></span>
+      <span lang="ja"><a href="https://pixiv.net/">Pixiv</a>のイラストがランダムに表示されます。<span class="yellow-marker-thin">18禁画像が確実に出ます</span>（望む通り）。</span>
+      <span lang="zh">從<a href="https://pixiv.net/">Pixiv</a>隨機獲取一張18禁的插畫。<span class="yellow-marker-thin">一定會被標記為<a>#NSFW</a>。</span></span>
     </p>
     <p>
-      The illust id may contain multiple images, and all of them (no more than 10) will be sent to the user. If the total number of images is larger than 10, only the first 10 of them will be sent. The returned images are in compressed <code>jpg</code> format, and original files can be accessed from the pixiv link attached with the image.
+      <span lang="en">The illust id may contain multiple images, and all of them (no more than 10) will be sent to the user. If the total number of images is larger than 10, only the first 10 of them will be sent. The returned images are in compressed <code>jpg</code> format, and original files can be accessed from the pixiv link attached with the images.</span>
+      <span lang="ja">Pixivのイラストには複数の画像が含まれている場合、10枚以下の画像しか送られません。画像は<code>jpg</code>形式で圧縮されて送られます。付けたリンクを開くとPixivへ飛んで、元ファイルをダウンロードできます。</span>
+      <span lang="zh">Pixiv的一個插畫ID可能會包含多張圖像，而K醬一次最多能上傳10張。圖像會以<code>jpg</code>壓縮格式傳回，單擊附帶的連結也可直接從Pixiv下載原始圖像。</span>
     </p>
     <p>
-      Time to fetch the images depends on server conditions and varies from 1s to 20s. If no images are returned after 30s, the command will be dumped due to timeout.
+      <span lang="en">Time to fetch the images depends on server conditions and varies from 1s to 20s. If no images are returned after 30s, the command will be dumped due to timeout.</span>
+      <span lang="ja">サーバーや回線の状態によって時間がかかりますので返信が来るまで少々お待ちを。通常は20秒以内に必ず届けますが、30秒以上かかったらリクエストが無効になり、タイムアウトになります。タイムアウトが発生した場合は、新しいコマンドをリクエストしてください。</span>
+      <span lang="zh">根據伺服器以及網路連接狀態，K醬會在1至20秒之内進行回覆。如果超過30秒未收到回覆，説明連結已經超時，需要重新發送指令。</span>
     </p></li>
     <li><p>
-      <code>/d</code> - Roll a die. A telegram dice object will be returned.
+      <code>/d</code> - <span lang="en">Roll a die. A telegram dice object will be returned.</span>
+      <span lang="ja">サイコロを振ります。</span>
+      <span lang="zh">丟骰子。</span>
     </p></li>
   </ul>
   <blockquote>
-    <p><strong>Testing features:</strong></p>
+    <p><strong>
+      <span lang="en">Testing features:</span>
+      <span lang="ja">ベータ版機能：</span>
+      <span lang="zh">試驗中功能：</span>
+    </strong></p>
     <ol>
-      <li><code>/r0 &lt;n&gt;</code> Call <code>/r0</code> for n times (1≤n≤10).
-        <br><strong>e.g.</strong> <code>/r0 5</code> will request 5 illust ids, each returning one image only.</li>
-      <li><code>/r18 &lt;n&gt;</code> Call <code>/r18</code> for n times (1≤n≤10).
-        <br><strong>e.g.</strong> <code>/r18 5</code> will request 5 R-18 illust ids, each returning one image only.</li>
+      <li><code>/r0 &lt;n&gt;</code> - <span lang="en">Call <code>/r0</code> for n times (1 ≤ n ≤ 10).</span>
+        <span lang="ja"><code>/r0</code>をn回リクエストします（1 ≤ n ≤ 10）。</span>
+        <span lang="zh">請求n次<code>/r0</code>（1 ≤ n ≤ 10）。</span>
+        <span lang="en"><br><strong>e.g.</strong> <code>/r0 5</code> will request 5 illust ids, each returning one image only.</span>
+        <span lang="ja"><br><strong>例：</strong> <code>/r0 5</code> - イラストを5枚送信します。</span>
+        <span lang="zh"><br><strong>例：</strong> <code>/r0 5</code> - 返回5張插畫。</span>
+      </li>
+      <li><code>/r18 &lt;n&gt;</code> - <span lang="en">Call <code>/r18</code> for n times (1 ≤ n ≤ 10).</span>
+        <span lang="ja"><code>/r18</code>をn回リクエストします（1 ≤ n ≤ 10）。</span>
+        <span lang="zh">請求n次<code>/r18</code>（1 ≤ n ≤ 10）。</span>
+        <span lang="en"><br><strong>e.g.</strong> <code>/r18 5</code> will request 5 illust ids, each returning one image only.</span>
+        <span lang="ja"><br><strong>例：</strong> <code>/r18 5</code> - 18禁イラストを5枚送信します。</span>
+        <span lang="zh"><br><strong>例：</strong> <code>/r18 5</code> - 返回5張18禁插畫。</span>
+      </li>
     </ol>
     <br>
-    <p><strong>P.S.</strong> The above features are not recommended to use, since clicking the command button for multiple times will definitely be faster than calling the parameters.</p>
+    <p>
+      <span lang="en"><strong>P.S.</strong> The above features are not recommended to use, since clicking the command button for multiple times will definitely be faster than calling the parameters.</span>
+      <span lang="ja"><strong>P.S.</strong> 上記の機能の使用は非推奨です。普通にコマンドを連打した方が速いようです。</span>
+      <span lang="zh"><strong>P.S.</strong> 上述功能并不推介使用，因為多次單擊指令按鈕會比調用參數快一點。</span>
+    </p>
   </blockquote>
 
-  <h1>Direct Message</h1>
+  <h1>
+    <span lang="en">Direct Message</span>
+    <span lang="ja">ダイレクトメッセージ</span>
+    <span lang="zh">私訊（DM）</span>
+  </h1>
 
     <p>
-      Users may send direct messages to kettyan for different usages:
+      <span lang="en">Users may send direct messages to kettyan for different usages:</span>
+      <span lang="ja">けっちゃんにDMするとさらに出来ることがあります。</span>
+      <span lang="zh">直接向K醬對話（DM）就可以觸發更多功能。</span>
     </p>
     <ul>
-      <li><a href="#pid">Get illust by pixiv id</a></li>
-      <li><a href="#tagsearch">Search pixiv illust by tags or keywords</a></li>
-      <li><a href="#imgsearch">Find similar illust</a></li>
-      <li><a href="#sticker">Convert telegram stickers to images</a></li>
+      <li><a href="#pid">
+        <span lang="en">Get illust by pixiv id</span>
+        <span lang="ja">Pixiv IDでイラストをダウンロードする</span>
+        <span lang="zh">用Pixiv ID獲取圖片</span>
+      </a></li>
+      <li><a href="#tagsearch">
+        <span lang="en">Search pixiv illust by tags or keywords</span>
+        <span lang="ja">タグやキーワードでイラストを検索する</span>
+        <span lang="zh">搜尋標籤或關鍵字</span>
+      </a></li>
+      <li><a href="#imgsearch">
+        <span lang="en">Find similar illust</span>
+        <span lang="ja">類似のイラストを探す</span>
+        <span lang="zh">搜尋類似的圖片</span>
+      </a></li>
+      <li><a href="#sticker">
+        <span lang="en">Convert telegram stickers to images</span>
+        <span lang="ja">TelegramスタンプをPNG/JPGに変換する</span>
+        <span lang="zh">轉換表情貼圖</span>
+      </a></li>
     </ul>
 
-  <h2 id="pid">Get illust by pixiv id</h2>
+  <h2 id="pid">
+    <span lang="en">Get illust by pixiv id</span>
+    <span lang="ja">Pixiv IDでイラストをダウンロードする</span>
+    <span lang="zh">用Pixiv ID獲取圖片</span>
+  </h2>
     <blockquote>
-      <p><strong>What is a pixiv id?</strong></p>
+      <span lang="en"><p><strong>What is a pixiv id?</strong></p>
       <p>A pixiv illust id is the unique identifier for the illust. The pixiv id may be found in the pixiv url.</p>
       <p><strong>e.g.</strong> url: https://www.pixiv.net/artworks/12345678, id: 12345678</p>
-      <p><strong>e.g.</strong> url: https://www.pixiv.net/member_illust.php?mode=medium&amp;illust_id=33445566, id: 33445566</p>
+      <p><strong>e.g.</strong> url: https://www.pixiv.net/member_illust.php?mode=medium&amp;illust_id=33445566, id: 33445566</p></span>
+      <span lang="ja"><p><strong>Pixiv IDとは？</strong></p>
+      <p>PixivイラストのIDはその唯一の識別子です。イラストのURLにはIDが記載されています。</p>
+      <p><strong>例：</strong> URL: https://www.pixiv.net/artworks/12345678, ID: 12345678</p>
+      <p><strong>例：</strong> URL: https://www.pixiv.net/member_illust.php?mode=medium&amp;illust_id=33445566, ID: 33445566</p></span>
+      <span lang="zh"><p><strong>什麽是Pixiv ID？</strong></p>
+      <p>每個Pixiv插畫都有唯一的ID，在URL裡就可以找到。</p>
+      <p><strong>例：</strong> URL: https://www.pixiv.net/artworks/12345678, ID: 12345678</p>
+      <p><strong>例：</strong> URL: https://www.pixiv.net/member_illust.php?mode=medium&amp;illust_id=33445566, ID: 33445566</p></span>
     </blockquote>
     <p>
-      When a digit number is sent to kettyan, kettyan will regard it as a pixiv id and try to return the images of this illust id. Kettyan will tell the user if the pixiv id is invalid (no such id).
+      <span lang="en">When a <span class="yellow-marker-thin">number</span> is sent to kettyan, kettyan will regard it as a pixiv id and try to return the images of this illust id. Kettyan will tell the user if the pixiv id is invalid (no such id).</span>
+      <span lang="ja"><span class="yellow-marker-thin">数字のみ</span>が送られた場合は、Pixiv IDとして認識されます。もちろん、すべての数字が有効なPixiv IDというわけではありません。<code>https://www.pixiv.net/artworks/xxxxxxxx</code>が存在している場合だけです。</span>
+      <span lang="zh">向K醬傳送<span class="yellow-marker-thin">數字信息</span>，會被識別為Pixiv ID。但并不是所有數字都是合法的Pixiv ID，只有真實存在的插畫才會被下載并返回。</span>
     </p>
     <p>
-      URLs with <code>https://www.pixiv.net/artworks/xxxxxxxx</code> format can also be sent to kettyan, which will be recognized as a pixiv id. Forwarded messages are also supported as long as the url is contained in the text and no images are sent together with the text (images are handled in <a href="#imgsearch">here</a>).
-    </p>
-    <h3>Examples</h3>
-      <p><strong>Acceptable</strong></p>
-      <ul>
-        <li>93983800</li>
-        <li>https://www.pixiv.net/artworks/83468695</li>
-        <li>ふにゃあああ～ https://www.pixiv.net/artworks/96058824いいね</li>
-      </ul>
-      <p><strong>Invalid</strong></p>
-      <ul>
-        <li>p86278368</li>
-        <li>pixiv.net/artworks/95714360</li>
-        <li>Images</li>
-      </ul>
-
-  <h2 id="tagsearch">Search pixiv illust by tags or keywords</h2>
-    <p>
-      If the message contains words, kettyan will recognize them as tags. Tags are separated by space (not comma or semicolon). Keyword search is also available, and only one keyword is supported, i.e., if multiple keywords separated by space are sent, then only the first one will be taken.
-    </p>
-    <p>
-      Since tags/keyword search all work in text mode, when a text message is sent to kettyan, tags search will occur first, and then keyword search is triggered if tags search returns nothing.
-    </p>
-    <p>
-      Keyword search is not very accurate, so simple keywords such as "gawr" are recommended. Tags search is more powerful and recommended, though it is not guaranteed to find the required illust especially with too many tags.
+      <span lang="en">URLs with <code>https://www.pixiv.net/artworks/xxxxxxxx</code> format can also be sent to kettyan, which will be recognized as a pixiv id. Forwarded messages are also supported as long as the url is contained in the text and no images are sent together with the text (images are handled in <a href="#imgsearch">here</a>).</span>
+      <span lang="ja">代わりに、<code>https://www.pixiv.net/artworks/xxxxxxxx</code>のURLをそのままけっちゃんに転送すると検出することもできます。画像がテキストと一緒に送られない限り、転送メッセージにはURL以外の内容があったとしても構いません。</span>
+      <span lang="zh">此外，可以直接發送帶有<code>https://www.pixiv.net/artworks/xxxxxxxx</code>格式的URL，同樣能被識別。訊息中含有除圖像之外的文本都沒有問題（若傳送了圖像，就會觸發<a href="#imgsearch">反向圖像搜索</a>）。</span>
     </p>
     <h3>
-      Examples
+      <span lang="en">Examples</span>
+      <span lang="ja">例</span>
+      <span lang="zh">例</span>
     </h3>
-    <p><strong>Acceptable</strong></p>
-      <ul>
-        <li>loli</li>
-        <li>hololive r18</li>
-        <li>hello</li>
-      </ul>
-      <p><strong>Invalid</strong></p>
-      <ul>
-        <li>love,ntr,loli</li>
-        <li>Find pictures of rushia!</li>
-      </ul>
+    <p><span class="green-marker-thin">
+      <span lang="en"><strong>Acceptable</strong></span>
+      <span lang="ja"><strong>正しい</strong></span>
+      <span lang="zh"><strong>正確</strong></span>
+    </span></p>
+    <ul>
+      <li>93983800</li>
+      <li>https://www.pixiv.net/artworks/83468695</li>
+      <li>ふにゃあああ～ https://www.pixiv.net/artworks/96058824いいね</li>
+    </ul>
+    <p><span class="red-marker-thin">
+      <span lang="en"><strong>Invalid</strong></span>
+      <span lang="ja"><strong>無効</strong></span>
+      <span lang="zh"><strong>錯誤</strong></span>
+    </span></p>
+    <ul>
+      <li>p86278368</li>
+      <li>pixiv.net/artworks/95714360</li>
+      <li>Images</li>
+    </ul>
 
-  <h2 id="imgsearch">Find similar illust</h2>
+  <h2 id="tagsearch">
+    <span lang="en">Search pixiv illust by tags or keywords</span>
+    <span lang="ja">タグやキーワードでイラストを検索する</span>
+    <span lang="zh">搜尋標籤或關鍵字</span>
+  </h2>
+    <p>
+      <span lang="en">If the message contains words, kettyan will recognize them as tags.<span class="yellow-marker-thin"> Tags are separated by space (not comma or semicolon).</span> Keyword search is also available, and <span class="yellow-marker-thin">only one keyword</span> is supported, i.e., if multiple keywords separated by space are sent, then only the first one will be taken.</span>
+      <span lang="ja">数字以外のテキストメッセージはタグまたはキーワードとして扱われています。<span class="yellow-marker-thin">タグはカンマ（,）またはセミコロン（;）でなく、スペース（&#9251;）で区切られます。</span>キーワードは<span class="yellow-marker-thin">一つ</span>しか取られませんので、スペースで区切られた複数のキーワードを送っても最初のキーワードだけが有効になります。</span>
+      <span lang="zh">除數字之外的文本訊息都會被識別為標籤或者關鍵字。<span class="yellow-marker-thin">標籤用空格（&#9251;）分隔，請不要用逗號（,）或是分號（;）代替。</span>關鍵字則<span class="yellow-marker-thin">只能為一個單詞</span>，若有多個關鍵字將取第一個。</span>
+    </p>
+    <p>
+      <span lang="en">Since tags/keyword search all work in text mode, when a text message is sent to kettyan, <span class="yellow-marker-thin">tags search will occur first, and then keyword search is triggered if tags search returns nothing</span>.</span>
+      <span lang="ja">タグとキーワード検索はどちらもDMテキストによってトリガーされるため、<span class="yellow-marker-thin">タグモードが先に行われ、結果が見つかりません場合はキーワードモードに切り替わります</span>。</span>
+      <span lang="zh">由於標籤和關鍵字搜尋是一樣由文本訊息觸發的，<span class="yellow-marker-thin">文本將先被當作多個標籤處理，若找不到結果再會改成關鍵字搜尋</span>。</span>
+    </p>
+    <p>
+      <span lang="en">Keyword search is not very accurate, so simple keywords such as "gawr" are recommended. <span class="yellow-marker-thin">Tags search is more powerful and recommended</span>, though it is not guaranteed to find the required illust especially with too many tags.</span>
+      <span lang="ja">キーワード検索は少し弱いので、シンプルな単語（「妹ちゃん」とか）をお願いします。代わりに、<span class="yellow-marker-thin">タグ検索がより頻繁に使われていますし、お勧めします</span>。もちろん、タグが多すぎて検索結果がほとんど出ない場合もあります。</span>
+      <span lang="zh">關鍵字搜尋比較不準確，不是簡單詞匯（例如【妹ちゃん】）一般會搜尋不到結果，<span class="yellow-marker-thin">因此建議使用標籤搜尋</span>。當然，標籤太多的話也很難找到相應的圖像。</span>
+    </p>
+    <h3>
+      <span lang="en">Examples</span>
+      <span lang="ja">例</span>
+      <span lang="zh">例</span>
+    </h3>
+    <p><span class="green-marker-thin">
+      <span lang="en"><strong>Acceptable</strong></span>
+      <span lang="ja"><strong>正しい</strong></span>
+      <span lang="zh"><strong>正確</strong></span>
+    </span></p>
+      <ul>
+        <li>
+          <span lang="en">loli</span>
+          <span lang="ja">ロリ</span>
+          <span lang="zh">蘿莉</span>
+        </li>
+        <li>
+          <span lang="en">hololive r18</span>
+          <span lang="ja">ホロライブ r18</span>
+          <span lang="zh">hololive r18</span>
+        </li>
+        <li>
+          <span lang="en">hello</span>
+          <span lang="ja">おはよう</span>
+          <span lang="zh">早晨</span>
+        </li>
+      </ul>
+    <p><span class="red-marker-thin">
+      <span lang="en"><strong>Invalid</strong></span>
+      <span lang="ja"><strong>無効</strong></span>
+      <span lang="zh"><strong>錯誤</strong></span>
+    </span></p>
+    <ul>
+      <li>
+        <span lang="en">love,ntr,loli</span>
+        <span lang="ja">ラブ,NTR,少女</span>
+        <span lang="zh">純愛,NTR,少女</span>
+      </li>
+      <li>
+        <span lang="en">Find pictures of rushia!</span>
+        <span lang="ja">えっと あの なんだっけ</span>
+        <span lang="zh">來點兔子 好嗎</span>
+      </li>
+    </ul>
+
+  <h2 id="imgsearch">
+    <span lang="en">Find similar illust</span>
+    <span lang="ja">類似のイラストを探す</span>
+    <span lang="zh">搜尋類似的圖片</span>
+  </h2>
   <p>
-    When photo message is sent, kettyan will search it on <a href="https://saucenao.com/">Saucenao</a>. If the message contains multiple images, kettyan will serach for each of them independently. A link with similarities will be returned and the preview of the link will be provided by Telegram if possible.
+    <span lang="en">When photo message is sent, kettyan will search it on <a href="https://saucenao.com/">Saucenao</a>. If the message contains multiple images, kettyan will serach for each of them independently. A link with similarities will be returned and the preview of the link will be provided by Telegram if possible.</span>
+    <span lang="ja">画像を直接に送ると、けっちゃんは<a href="https://saucenao.com/">Saucenao</a>でこの画像に似ているイラストを探していきます。複数の画像をまとめて送ってもOKです。返信メッセージは下記のように、類似度やリンクが返され、可能であればプレビューがTelegramによって提供されます。</span>
+    <span lang="zh">直接向K醬發送圖像，就可以觸發<a href="https://saucenao.com/">Saucenao</a>提供的反向圖像搜尋。發送一個包含多張圖像的媒體組也是OK的。如下圖所示，回覆會包含原始連結以及類似度，Telegram客戶端也會提供網址的圖像預覽。</span>
   </p>
   <img src="./index_files/assets/images/demo_1.webp">
   <p>
-    Three interactive buttons will be attached to the returned link.
+    <span lang="en">Three interactive buttons will be attached to the returned link.</span>
+    <span lang="ja">リンクの下には三つのボタンが付けられています。</span>
+    <span lang="zh">訊息下方有三個可互動的按鈕。</span>
   </p>
   <p>
-    If you think the search result is satisfying, you may press the <code>⭕</code> button or just leave it without doing anything; If the result is unexpected, you may try to press <code>❌</code> to see next result with lower similarity. When no other results can be shown, a <a href="https://yandex.ru/images/">Yandex</a> search link will be provided. If too many people are searching, then the yandex link will be unavailable due to bot detection.
+    <span lang="en">If you think the search result is satisfying, you may press the <code>⭕</code> button or just leave it without doing anything; <span class="yellow-marker-thin">If the result is unexpected, you may try to press <code>❌</code> to see next result with lower similarity</span>. When no other results can be shown, a <a href="https://yandex.ru/images/">Yandex</a> search link will be provided. If too many people are searching, then the yandex link will be unavailable due to bot detection.</span>
+    <span lang="ja">探したいイラストが見つかった場合は、良ければ<code>⭕</code>を押すか、またはそのまま放置していても大丈夫です。<span class="yellow-marker-thin"><code>❌</code>を押すと、さらに他の検索結果が次々と出てきます。しかし、類似度はだんだん低くなります。</span>全部ハズレたら、<a href="https://yandex.ru/images/">Yandex</a>のイメージ検索リンクが送られます。リクエストが多くなり、ボットがYandexに検知されたり、リンクが表示できなくなる場合もあります。</span>
+    <span lang="zh">如果你覺得已經找到了你想要的圖片，那麽單擊<code>⭕</code>即可，或者放著不管。<span class="yellow-marker-thin">如果你覺得不是很滿意，可以嘗試單擊<code>❌</code>查看下一條結果（但類似度會更低）。</span>所有結果都顯示完畢后，若仍未搜尋到想要的圖像，你可以單擊最後的<a href="https://yandex.ru/images/">Yandex</a>連結。由於請求過多會被Yandex的反機器人檢測到，因此這個連結不一定會出現。</span>
   </p>
   <p>
-    If you are searching for an incomplete photo's original version, saucenao seems to be poor at such work. If kettyan returns a similar illust but not a pixiv one, you may try to press <code>この画像で検索する</code> to further search for this image.
+    <span lang="en">If you are searching for an incomplete photo's original version, saucenao seems to be poor at such work, <span class="yellow-marker-thin">so it may be better to send a complete one</span>. If kettyan returns a similar illust but not a pixiv one, you may try to press <code>この画像で検索する</code> to further search for this image.</span>
+    <span lang="ja">画像の一部分だけで検索するのはSaucenaoにとって少し厳しそうですから、<span class="yellow-marker-thin">画像全体を送信した方が楽になります</span>。<code>この画像で検索する</code>を押すと、検索結果でもう一度検索できます。</span>
+    <span lang="zh">另外，Saucenao搜尋部分圖片并不準確，<span class="yellow-marker-thin">最好能夠提供全圖</span>。單擊<code>この画像で検索する</code>，可以用當前的結果再次進行搜尋。</span>
+  </p>
+  <p>
+    <span lang="en">The buttons will expire in about 1h, and then nothing will happen when pressed.</span>
+    <span lang="ja">ボタンの有効期限がおよそ1hになりますので、切ったら押しても何も起こらないのです。</span>
+    <span lang="zh">按鈕在大約1h之内過期，過期之後再單擊則不會有反應。</span>
   </p>
 
-  <h2 id="sticker">Convert Telegram stickers to images</h2>
+  <h2 id="sticker">
+    <span lang="en">Convert Telegram stickers to images</span>
+    <span lang="ja">TelegramスタンプをPNG/JPGに変換する</span>
+    <span lang="zh">轉換表情貼圖</span>
+  </h2>
   <p>
-    Send telegram sticker to kettyan and the <code>png</code> original file together with the compressed <code>jpg</code> picture will be returned.
+    <span lang="en">Send telegram sticker to kettyan and the <code>png</code> original file together with the compressed <code>jpg</code> picture will be returned.</span>
+    <span lang="ja">スタンプを送ると、<code>png</code>オリジナルファイルや<code>jpg</code>圧縮画像に変換できます。</span>
+    <span lang="zh">向K醬發送貼圖，將會返回其<code>png</code>原始圖像以及<code>jpg</code>壓縮圖像。</span>
   </p>
-  <p>
-    Only support static stickers, i.e., animated stickers cannot be converted using kettyan.
-  </p>
+  <p><span class="yellow-marker-thin">
+    <span lang="en">Only support static stickers, i.e., animated stickers cannot be converted using kettyan.</span>
+    <span lang="ja">動くスタンプはまだ変換できません。</span>
+    <span lang="zh">動畫貼圖暫時不支持轉換。</span>
+  </span></p>
 
   <h1>
-    Inline Call
+    <span lang="en">Inline Call</span>
+    <span lang="ja">インラインメッセージ</span>
+    <span lang="zh">内聯訊息</span>
   </h1>
   <blockquote>
     <p>
-      kettyan does not support inline call
+      <span lang="en">kettyan does not support inline call</span>
+      <span lang="ja">まだサポートされていません</span>
+      <span lang="zh">暫時不支持内聯模式。</span>
     </p>
   </blockquote>
   <h1>
-    Group Message
+    <span lang="en">Group Message</span>
+    <span lang="ja">グループメッセージ</span>
+    <span lang="zh">群組訊息</span>
   </h1>
   <blockquote>
     <p>
-      kettyan does not support group message
+      <span lang="en">kettyan does not support group message</span>
+      <span lang="ja">まだサポートされていません</span>
+      <span lang="zh">暫時不支持群組。</span>
     </p>
   </blockquote>
 </article>
 <hr>
 <article id="service">
   <h1>
-    Service Support
+    <span lang="en">Service Support</span>
+    <span lang="ja">サポート</span>
+    <span lang="zh">支持與幫助</span>
   </h1>
   <h2>
     API
@@ -235,21 +396,59 @@
   <a href="#" onclick="javascript:foldSideBar(); return false;">
     <div id="fold"><img src="./index_files/assets/images/fold.png" id="foldpng"></div></a>
   <div id="sidecontent">
-  <h3>Contents</h3>
+  <h3>
+    <span lang="en">Contents</span>
+    <span lang="ja">コンテンツ</span>
+    <span lang="zh">内容</span>
+  </h3>
   <ul id="side1">
-    <a href="#commands" id="commandssection">Command List</a>
-    <a href="#pid" id="pidsection">Get by Pixiv ID</a>
-    <a href="#tagsearch" id="tagsearchsection">Search by Tags</a>
-    <a href="#imgsearch" id="imgsearchsection">Search by Image</a>
-    <a href="#sticker" id="stickersection">Convert Stickers</a>
+    <a href="#commands" id="commandssection">
+      <span lang="en">Command List</span>
+      <span lang="ja">コマンドリスト</span>
+      <span lang="zh">指令集</span>
+    </a>
+    <a href="#pid" id="pidsection">
+      <span lang="en">Get by Pixiv ID</span>
+      <span lang="ja">Pixiv IDで検索</span>
+      <span lang="zh">用Pixiv ID獲取圖片</span>
+    </a>
+    <a href="#tagsearch" id="tagsearchsection">
+      <span lang="en">Search by Tags</span>
+      <span lang="ja">タグで検索</span>
+      <span lang="zh">搜尋標籤或關鍵字</span>
+    </a>
+    <a href="#imgsearch" id="imgsearchsection">
+      <span lang="en">Reverse Image Search</span>
+      <span lang="ja">逆画像検索</span>
+      <span lang="zh">搜尋類似的圖片</span>
+    </a>
+    <a href="#sticker" id="stickersection">
+      <span lang="en">Convert Stickers</span>
+      <span lang="ja">スタンプ変換</span>
+      <span lang="zh">轉換表情貼圖</span>
+    </a>
   </ul>
   <h3>
-    Links
+    <span lang="en">Links</span>
+    <span lang="ja">リンク</span>
+    <span lang="zh">連結</span>
   </h3>
   <ul>
-    <a href="#service" id="servicesection">API</a>
-    <a href="https://github.com/remisiki/kettyan-bot">Github</a>
-    <a href="https://t.me/kettyan_bot">Telegram</a>
+    <a href="#service" id="servicesection">
+      <span lang="en">API</span>
+      <span lang="ja">API</span>
+      <span lang="zh">API</span>
+    </a>
+    <a href="https://github.com/remisiki/kettyan-bot">
+      <span lang="en">Github</span>
+      <span lang="ja">Github</span>
+      <span lang="zh">Github</span>
+    </a>
+    <a href="https://t.me/kettyan_bot">
+      <span lang="en">Telegram</span>
+      <span lang="ja">Telegram</span>
+      <span lang="zh">Telegram</span>
+    </a>
   </ul>
   </div>
 </aside>

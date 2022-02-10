@@ -8,19 +8,8 @@ function onload_lang() {
 }
 
 function switch_lang(lang) {
-  if (lang == "en") {
-    $('[lang="en"]').show();
-    $('[lang="ja"]').hide();
-    $('[lang="zh"]').hide();
-  }
-  else if (lang == "ja") {
-    $('[lang="en"]').hide();
-    $('[lang="ja"]').show();
-    $('[lang="zh"]').hide();
-  }
-  else if (lang == "zh") {
-    $('[lang="en"]').hide();
-    $('[lang="ja"]').hide();
-    $('[lang="zh"]').show();
-  }
+  $('[lang="en"]').hide();
+  $('[lang="ja"]').hide();
+  $('[lang="zh"]').hide();
+  $('[lang="' + lang + '"]').show();
 }
