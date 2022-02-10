@@ -3,11 +3,12 @@
 # from telegram import Update, InputMediaPhoto, Dice
 # from getImageInfo import getImageInfo
 
-from ket.botHandler import *
+from ket.bot import *
 
 import threading
 import requests
 import os
+import time
 
 
 def printit():
@@ -15,16 +16,24 @@ def printit():
 	print("Bot active.")
 
 def clearCache():
-	threading.Timer(43200, clearCache).start()
-	filenames = next(os.walk("img"), (None, None, []))[2]
-	for file in filenames:
-		os.remove(os.path.join("img", file))
+	threading.Timer(7200, clearCache).start()
+	for f in os.listdir("img"):
+		file_path = os.path.join("img", f)
+		if (os.path.isfile(file_path)):
+			os.remove(file_path)
+	for f in os.listdir("data"):
+		file_path = os.path.join("data", f)
+		if ((time.time() - os.stat(file_path).st_mtime > 3600)
+			& (os.path.isfile(file_path))):
+			os.remove(file_path)
 	print("Cache cleared.")
 
 def main():
 	printit()
 	if (not os.path.exists("img")):
 		os.mkdir("img")
+	if (not os.path.exists("data")):
+		os.mkdir("data")
 	clearCache()
 	with open("token.txt", "r") as f:
 		token = f.readline()
@@ -44,6 +53,12 @@ def main():
 	dispatcher.add_handler(random_kin_handler)
 	echo_handler = MessageHandler(Filters.text & (~Filters.command), echo, run_async = True)
 	dispatcher.add_handler(echo_handler)
+	sticker_handler = MessageHandler(Filters.sticker, stickerConverter, run_async = True)
+	dispatcher.add_handler(sticker_handler)
+	photo_handler = MessageHandler(Filters.photo, imageSearch, run_async = True)
+	dispatcher.add_handler(photo_handler)
+	callback_handler = CallbackQueryHandler(callback)
+	dispatcher.add_handler(callback_handler)
 
 	updater.start_polling()
 	updater.idle()
